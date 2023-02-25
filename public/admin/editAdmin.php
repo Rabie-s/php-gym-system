@@ -42,7 +42,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' and isset($_POST['submit'])) {
 
 
             <?php
-                displayAllFlashMessage();
+            displayAllFlashMessage();
             //display error 
             if (isset($errorsMsg)) {
                 foreach ($errorsMsg as $error) {
@@ -101,14 +101,13 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' and isset($_POST['submit'])) {
                             <label class="uk-form-label" for="form-horizontal-select">Role</label>
                             <div class="uk-form-controls">
                                 <select name="role" class="uk-select" id="form-horizontal-select">
-                                    <!--                             <option value="1">User</option>
-                            <option value="2">Admin</option> -->
+
                                     <?php if ($row['role'] == '1') :
-                                        echo "<option value='1'>User</option>";
+                                        echo "<option value='1'>Employee</option>";
                                         echo "<option value='2'>Admin</option>";
                                     else :
                                         echo "<option value='2'>Admin</option>";
-                                        echo "<option value='1'>User</option>";
+                                        echo "<option value='1'>Employee</option>";
                                     endif;
                                     ?>
 

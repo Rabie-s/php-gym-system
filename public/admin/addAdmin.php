@@ -101,7 +101,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' and isset($_POST['submit'])) {
                     <label class="uk-form-label" for="form-horizontal-select">Role</label>
                     <div class="uk-form-controls">
                         <select name="role" class="uk-select" id="form-horizontal-select">
-                            <option value="1">User</option>
+                            <option value="1">Employee</option>
                             <option value="2">Admin</option>
                         </select>
                     </div>

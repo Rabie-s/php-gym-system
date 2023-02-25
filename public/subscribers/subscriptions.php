@@ -45,7 +45,7 @@ $subscribers = new subscriber();
                     <td><?= $row['Plan name']; ?></td>
                     <td><?= $row['price']; ?></td>
                     <td><?= $row['startDate']; ?></td>
-                    <td><?= $row['expiryDate']; ?></td>
+                    <td class="eDate"><?= $row['expiryDate']; ?></td>
                     <td><?= $row['discount']; ?></td>
                     <td><?= $row['totalAmount']; ?></td>
 
@@ -60,6 +60,22 @@ $subscribers = new subscriber();
     </table>
 
 </div>
+
+<script>
+    let TDate = document.querySelectorAll('.eDate');
+    let crDate = Date.parse(new Date());
+
+    for (let i = 0; i < TDate.length; i++) {
+
+        if (crDate > Date.parse(TDate[i].innerHTML)) {
+            TDate[i].style.color = "red";
+        } else {
+            TDate[i].style.color = "green";
+        }
+
+    }
+</script>
+
 
 <?php
 require_once('../../inc/footer.php');

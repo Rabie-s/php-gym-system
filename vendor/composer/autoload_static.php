@@ -28,6 +28,10 @@ class ComposerStaticInit739d5644571c6fc3c87ffc52df4be0be
         array (
             'Dompdf\\' => 7,
         ),
+        'A' => 
+        array (
+            'ArPHP\\I18N\\' => 11,
+        ),
     );
 
     public static $prefixDirsPsr4 = array (
@@ -54,6 +58,10 @@ class ComposerStaticInit739d5644571c6fc3c87ffc52df4be0be
         'Dompdf\\' => 
         array (
             0 => __DIR__ . '/..' . '/dompdf/dompdf/src',
+        ),
+        'ArPHP\\I18N\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/khaled.alshamaa/ar-php/src',
         ),
     );
 

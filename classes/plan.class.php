@@ -1,61 +1,72 @@
 <?php
 require_once("dbConfig.class.php");
 
-class plan extends connect{
+class plan extends connect
+{
 
     //insert data in database
-    public function insertPlan($name,$about,$price){
+    public function insertPlan($name, $about, $price)
+    {
         $sql = "INSERT INTO `plans` (`name`,`about`,`price`) VALUES (?,?,?)";
 
         $stmt = self::$db->prepare($sql);
-        $stmt->bindValue(1,$name);
-        $stmt->bindValue(2,$about);
-        $stmt->bindValue(3,$price);
+        $stmt->bindValue(1, $name);
+        $stmt->bindValue(2, $about);
+        $stmt->bindValue(3, $price);
         $stmt->execute();
-        
-
     }
 
     //update data in database using id
-    public function updatePlansId($name,$about,$price,$id){
+    public function updatePlansId($name, $about, $price, $id)
+    {
         $sql = "UPDATE `plans` SET `name`=?,`about`=?,`price`=? WHERE `id` = ?";
         $stmt = self::$db->prepare($sql);
-        $stmt->bindValue(1,$name);
-        $stmt->bindValue(2,$about);
-        $stmt->bindValue(3,$price);
-        $stmt->bindValue(4,$id);
+        $stmt->bindValue(1, $name);
+        $stmt->bindValue(2, $about);
+        $stmt->bindValue(3, $price);
+        $stmt->bindValue(4, $id);
 
         $stmt->execute();
     }
 
     //delete data in database using id
-    public function deletePlansId($id){
-        $sql = "DELETE FROM `plans` WHERE id = ?";
-        $stmt = self::$db->prepare($sql);
+    public function deletePlansId($id)
+    {
 
-        $stmt->bindValue(1,$id);
-        $stmt->execute();
+        try {
+            $sql = "DELETE FROM `plans` WHERE id = ?";
+            $stmt = self::$db->prepare($sql);
+
+            $stmt->bindValue(1, $id);
+            $stmt->execute();
+        } catch (PDOException $e) {
+            if($e->getCode()=='23000'){//Cannot delete or update a parent row: a foreign key constraint fails 
+                return 23000;
+            }
+            
+        }
     }
 
     //fetch all Plans data from database
-    public function fetchPlans(){
+    public function fetchPlans()
+    {
         $sql = "SELECT * FROM `plans`";
         $stmt = self::$db->prepare($sql);
         $stmt->execute();
         $result = $stmt->fetchAll();
-        if(!$result == null){
+        if (!$result == null) {
             return $result;
-        }else{
+        } else {
             return [];
         }
-        
     }
 
     //fetch Plans data from database using id
-    public function fetchPlansId($id){
+    public function fetchPlansId($id)
+    {
         $sql = "SELECT * FROM `plans` WHERE `id` = ?";
         $stmt = self::$db->prepare($sql);
-        $stmt->bindValue(1,$id);
+        $stmt->bindValue(1, $id);
         $stmt->execute();
         $result = $stmt->fetchAll();
         return $result;

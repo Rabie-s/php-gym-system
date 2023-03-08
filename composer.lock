@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "f1d96c2be98803401f481acf89599a88",
+    "content-hash": "ca3f329b21c99627fc7b6f066fbc88a0",
     "packages": [
         {
             "name": "dompdf/dompdf",
@@ -67,6 +67,69 @@
                 "source": "https://github.com/dompdf/dompdf/tree/v2.0.1"
             },
             "time": "2022-09-22T13:43:41+00:00"
+        },
+        {
+            "name": "khaled.alshamaa/ar-php",
+            "version": "v6.3.2",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/khaled-alshamaa/ar-php.git",
+                "reference": "590da34e9897ef8b9fedb678647c436253e91da0"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/khaled-alshamaa/ar-php/zipball/590da34e9897ef8b9fedb678647c436253e91da0",
+                "reference": "590da34e9897ef8b9fedb678647c436253e91da0",
+                "shasum": ""
+            },
+            "require": {
+                "ext-calendar": "*",
+                "ext-mbstring": "*",
+                "php": ">=5.6.0"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "9.*"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "ArPHP\\I18N\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "LGPL-3.0"
+            ],
+            "authors": [
+                {
+                    "name": "Khaled Al-Sham'aa",
+                    "email": "khaled@ar-php.org",
+                    "homepage": "http://www.ar-php.org",
+                    "role": "Developer"
+                }
+            ],
+            "description": "Set of functionalities enable Arabic website developers to serve professional search, present and process Arabic content in PHP",
+            "homepage": "https://github.com/khaled-alshamaa/ar-php",
+            "keywords": [
+                "arabic",
+                "arabic-calendar",
+                "arabic-glyphs",
+                "arabic-numbers",
+                "arabic-segments-identifier",
+                "arabic-sentiment",
+                "arabic-sql-query"
+            ],
+            "support": {
+                "issues": "https://github.com/khaled-alshamaa/ar-php/issues",
+                "source": "https://github.com/khaled-alshamaa/ar-php/tree/v6.3.2"
+            },
+            "funding": [
+                {
+                    "url": "https://github.com/khaled-alshamaa",
+                    "type": "github"
+                }
+            ],
+            "time": "2023-01-21T07:19:15+00:00"
         },
         {
             "name": "masterminds/html5",

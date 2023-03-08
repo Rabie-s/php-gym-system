@@ -48,7 +48,6 @@ $subscribers = new subscriber();
                     <td class="eDate"><?= $row['expiryDate']; ?></td>
                     <td><?= $row['discount']; ?></td>
                     <td><?= $row['totalAmount']; ?></td>
-
                     <td>
                         <a uk-icon="icon: file-text" uk-tooltip="Invoice" class="uk-button uk-button-secondary uk-button-small" href="subscriptionsInvoice.php?id=<?= base64_encode($row['id']); ?>"></a>
                         <a uk-icon="icon: trash" uk-tooltip="Delete" class="uk-button uk-button-danger uk-button-small" href="deleteSubscribers.php?id=<?= base64_encode($row['id']); ?>"></a>

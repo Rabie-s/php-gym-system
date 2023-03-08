@@ -32,7 +32,11 @@ $plans = new plan();
                 <th>#</th>
             </tr>
         </thead>
+
+        <?php displayAllFlashMessage(); ?>
         <tbody>
+
+
 
             <?php foreach ($plans->fetchPlans() as $row) : ?>
 

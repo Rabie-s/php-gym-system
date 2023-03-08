@@ -4,16 +4,26 @@ require_once('../../core/init.php');
 
 // reference the Dompdf namespace
 use Dompdf\Dompdf;
+//ar
+$arabic = new \ArPHP\I18N\Arabic(); 
 // instantiate and use the dompdf class
 $dompdf = new Dompdf();
 
 $subscribers = new subscriber();
 
 
-foreach($subscribers->fetchInvoiceSubscriptionsId(base64_decode($_GET['id'])) as $row):
 
-$invoice = '
+foreach ($subscribers->fetchInvoiceSubscriptionsId(base64_decode($_GET['id'])) as $row) :
 
+    $invoice = '
+
+<!DOCTYPE html>
+<html>
+<head>
+
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+
+</head>
 <style>
 
     .top{
@@ -44,12 +54,12 @@ $invoice = '
 
 <body>
 
-    <h1 class="logo">'.SITEName.'</h1><br>
+    <h1 class="logo">' . SITEName . '</h1><br>
 
     <div class="top">
         <ul>
-            <li style="text-align:right">Date:'.date("Y-m-d").'</li>
-            <li>Mr/Miss:'.$row['Subscriber name'].'</li>
+            <li style="text-align:right">Date:' . date("Y-m-d") . '</li>
+            <li>Mr/Miss:' . $row['Subscriber name'] . '</li>
         </ul>
     </div>
     <br>
@@ -68,36 +78,39 @@ $invoice = '
             </tr>
 
             <tr>
-                <td>'.$row['Plan name'].'</td>
-                <td>'.$row['price'].'$</td>
-                <td>From '.$row['startDate'].' to <br> '.$row['expiryDate'].'</td>
+                <td>' . $row['Plan name'] . '</td>
+                <td>' . $row['price'] . '$</td>
+                <td>From ' . $row['startDate'] . ' to <br> ' . $row['expiryDate'] . '</td>
             </tr>
         </table>
     </center>
 
     <ul>
-        <li>Discount:'.$row['discount'].'%</li>
-        <li>Total amount:'.$row['totalAmount'].'$</li>
+        <li>Discount:' . $row['discount'] . '%</li>
+        <li>Total amount:' . $row['totalAmount'] . '$</li>
     </ul>
     
 
-
-
 </body>
-
+</html>
 
 ';
 
 
 
-$dompdf->loadHtml($invoice);
 
-// (Optional) Setup the paper size and orientation
-$dompdf->setPaper('A4', 'landscape');
 
-// Render the HTML as PDF
-$dompdf->render();
 
-// Output the generated PDF to Browser
-$dompdf->stream($row['id'].'-'.$row['Subscriber name'].'-'.'invoice');
+    //$dompdf->loadHtml($invoice);
+
+    $dompdf->loadHtml($arabic->arIdentify($invoice));
+
+    // (Optional) Setup the paper size and orientation
+    $dompdf->setPaper('A4', 'landscape');
+
+    // Render the HTML as PDF
+    $dompdf->render();
+
+    // Output the generated PDF to Browser
+    $dompdf->stream($row['id'] . '-' . $row['Subscriber name'] . '-' . 'invoice'); 
 endforeach;

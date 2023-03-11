@@ -21,7 +21,7 @@ $plans = new plan();
             <div class="uk-card uk-card-default uk-card-hover uk-card-body uk-margin-top">
                 <h2 class="uk-card-title"><?= $row['name'] ?></h2>
                 <p><?= $row['about'] ?></p>
-                <div class="uk-h4"><?= $row['price'] ?></div>
+                <div class="uk-h4"><?= $row['price'] ?>$</div>
 
                 <a class="uk-button uk-button-primary" href="addSubscribers.php?planId=<?= $row['id'] ?>&price=<?= $row['price'] ?>">Select</a>
             </div>

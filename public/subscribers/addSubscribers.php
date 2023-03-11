@@ -126,7 +126,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' and isset($_POST['submit'])) {
 
 
                     <div class="uk-width-1-2@s">
-                        <label class="uk-form-label" for="form-stacked-text">Discount</label>
+                        <label class="uk-form-label" for="form-stacked-text">Discount %</label>
                         <div class="uk-form-controls">
                             <input type="text" value="0" id="discount" name="discount" class="uk-input" id="form-stacked-text" type="text">
                         </div>

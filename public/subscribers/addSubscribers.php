@@ -8,7 +8,7 @@ require_once('../../inc/nav.php');
 $errorsMsg = array(); //errors array
 
 //i store url parameter (id) in session.
-if(!isset($_SESSION['planId'])){
+if (!isset($_SESSION['planId'])) {
     $_SESSION['planId'] = $_GET['planId'];
 }
 
@@ -17,6 +17,8 @@ if (isset($_GET['price'])) { //get price from url and save it in getPrice var.
 } else {
     $getPrice = 0;
 }
+
+$planName = $_GET['planName'];
 
 
 
@@ -34,7 +36,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' and isset($_POST['submit'])) {
     $price = $_POST['price'];
     $discount = $_POST['discount'];
 
-    $totalAmount = ((intval($months) * floatval($price) * floatval((100 - $discount)/  100))); //get total price
+    $totalAmount = ((intval($months) * floatval($price) * floatval((100 - $discount) /  100))); //get total price
 
 
     if (empty($name) or empty($address) or empty($phoneNumber)) {
@@ -43,8 +45,16 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' and isset($_POST['submit'])) {
     } else {
         $subscribers = new subscriber();
 
-        $subscribers->insertSubscribers($name, $address, $phoneNumber, $startDate, 
-        $endDate,$discount,$totalAmount,$_SESSION['planId']);
+        $subscribers->insertSubscribers(
+            $name,
+            $address,
+            $phoneNumber,
+            $startDate,
+            $endDate,
+            $discount,
+            $totalAmount,
+            $_SESSION['planId']
+        );
         unset($_SESSION['planId']);
 
         createFlashMessage('success', 'Inserted successful.');
@@ -56,6 +66,10 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' and isset($_POST['submit'])) {
 ?>
 
 <div class="uk-container">
+
+    <div class="uk-card-small uk-card-default uk-card-body uk-margin-bottom">
+        <h2 class="uk-text-center"><?= $planName; ?> plan</h2>
+    </div>
 
     <div class="uk-flex uk-flex-middle uk-flex-center vh-100">
 

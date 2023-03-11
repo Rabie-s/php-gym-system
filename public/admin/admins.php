@@ -16,8 +16,8 @@ $admin = new admin();
 
 <div class="uk-container">
 
-    <div class="uk-card uk-card-default uk-card-body uk-margin-bottom">
-        <h1 class="uk-text-center">ADMINS</h1>
+    <div class="uk-card-small uk-card-default uk-card-body uk-margin-bottom">
+        <h2 class="uk-text-center">ADMINS</h2>
     </div>
 
 

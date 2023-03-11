@@ -10,8 +10,8 @@ $subscribers = new subscriber();
 
 <div class="uk-container">
 
-    <div class="uk-card uk-card-default uk-card-body uk-margin-bottom">
-        <h1 class="uk-text-center">SUBSCRIPTIONS</h1>
+    <div class="uk-card-small uk-card-default uk-card-body uk-margin-bottom">
+        <h2 class="uk-text-center">SUBSCRIPTIONS</h2>
     </div>
 
     <div class="uk-flex uk-flex-left">

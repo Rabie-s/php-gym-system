@@ -11,7 +11,7 @@ $plans = new plan();
 <div class="uk-container">
 
 <div class="uk-card uk-card-default uk-card-body uk-margin-bottom">
-        <h1 class="uk-text-center">Choose plan</h1>
+        <h2 class="uk-text-center">Choose plan</h2>
     </div>
     
     <?php displayAllFlashMessage(); ?>
@@ -23,7 +23,7 @@ $plans = new plan();
                 <p><?= $row['about'] ?></p>
                 <div class="uk-h4"><?= $row['price'] ?>$</div>
 
-                <a class="uk-button uk-button-primary" href="addSubscribers.php?planId=<?= $row['id'] ?>&price=<?= $row['price'] ?>">Select</a>
+                <a class="uk-button uk-button-primary" href="addSubscribers.php?planId=<?= $row['id'] ?>&planName=<?= $row['name'] ?>&price=<?= $row['price'] ?>">Select</a>
             </div>
         </div>
 

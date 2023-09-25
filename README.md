@@ -8,6 +8,9 @@ Simple system to mange your GYM ,your can add,edit and delete plans and subscrib
 Frontend:[Uikit](https://getuikit.com/) css framework components.
 
 Backend:PHP 8.0.23.
+
+-First go to core/init.php and add your configurations.
+
 ## Login
 
 **Admin:** (Email:rabie@site.com || Password:rabie@site.com).

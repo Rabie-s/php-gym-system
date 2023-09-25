@@ -23,6 +23,6 @@ define("SITEName", "GYM System"); //Site name
 //define('UPLOADFilesPATH','uploads/');
 
 define("BUA", "../classes/adminsModel.php"); //base url for admin.
-define("BU", "http://localhost/gymSystem/"); //base url for wep site.
-define("ASSETS", "http://localhost/gymSystem/assets/"); //wep site assets. 
+define("BU", "http://localhost/php-gym-system/"); //base url for wep site.
+define("ASSETS", "http://localhost/php-gym-system/assets/"); //wep site assets. 
 define('DOMINEName', $_SERVER['SERVER_NAME']);//get domine name
